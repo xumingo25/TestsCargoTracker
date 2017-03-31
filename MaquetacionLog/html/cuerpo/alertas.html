@@ -1,0 +1,62 @@
+<!--
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="charset" CONTENT="utf-8">
+<link rel="stylesheet" href="Formato/css/estilo.css"/>
+<link rel="shortcut icon" href="Formato/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Formato/css/jquery.fancybox.css" >
+    <script src="Formato/js/jquery.js"></script>
+    <script src="Formato/js/jquery-migrate-1.1.1.js"></script>
+    <script src="Formato/js/bgstretcher.js"></script>
+    <script src="Formato/js/jquery.elastislide.js"></script>
+    <script src="Formato/js/jquery.fancybox.pack.js"></script>
+    <script>
+	$(document).ready(function() {	
+      //  Initialize Backgound Stretcher
+      $('BODY').bgStretcher({
+        //images: ['images/slide-1.jpg'], 
+		imageWidth: 1024, 
+		imageHeight: 768, 
+		resizeProportionally:true	
+       });
+	$('#carousel').elastislide({imageW :300,margin: 0,minItems: 1});   
+	$('.magnifier').fancybox();   
+		
+
+	$(".view").hover(
+	function(){$(this).find("img").stop().animate({opacity:0.5},"normal")},
+	function(){$(this).find("img").stop().animate({opacity:1},"normal")})
+	})  
+	     	
+    </script>
+<TITLE>Log de Resultados</TITLE>
+<STYLE TYPE="text/css">
+<!--
+  table caption {color: darkblue; font-size: x-large; font-weight: bold}
+  td {align: left; font-weight: bold}
+  td.fail {color: darkred; width: 10% }
+  td.warn {color: darkgoldenrod; width: 10% }
+  td.pass {color: darkgreen; width: 10% }
+  td.unkn {color: darkcyan; width: 10% }
+  td.time {width: 30%; font-weight: normal}
+  td.note {align: left; font-weight: bold}
+  li {font-weight: normal}
+-->
+</STYLE>
+</HEAD>
+<BODY>
+ <table class="tabla_encabezado" border="1" WIDTH="100%" rules="all">
+	<tr>
+	<TD style="text-align:center" id="encabezados">
+	<div id="img1"><a href="resumen.html"><img width="48px" title="Volver Atras" src="Formato/images/btnatras.png"/></a></div>
+	<div id="text1">Descripci&oacuten de Alertas </div></TD>
+	</tr>
+   </table>
+  
+  variablecreaciontabla3
+
+</BODY>
+</HTML>

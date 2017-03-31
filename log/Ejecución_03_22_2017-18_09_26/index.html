@@ -1,0 +1,226 @@
+
+<!--
+<!--
+	VARIABLES UTILIZADAS EN index.html
+var nombreCaso = "ClonTest_reporteHTML";
+var VP_Exitosos = "VP Link 'Administration Interface'\nVP Link 'Book'\nVP ultima pantalla de flujo";
+var VP_Rechazados = "";
+var VP_Alertas = "";
+	var Total_exitosos = "10";
+	var Total_rechazados = "15";
+	var Total_VP = "25";
+	VARIABLES UTILIZADAS EN resumen.html
+	var nombre_navegador = "Firefox";
+	var hora_inicial_resumen = "12:00";
+	var fecha_inicial_resumen = "30-06-2014";
+	var hora_termino_resumen = "13:00";
+	var fecha_termino_resumen = "30-06-2014";
+	VARIABLES UTILIZADAS EN vp_exitosos.html
+	var nombre_vp_exitosos = "Caso numero 1";
+	var mensaje_sistema = "asdjkalsjdklasjdklasjdklsajdkljaskld";
+	VARIABLES UTILIZADAS EN vp_rechazados.html
+	var nombre_vp_rechazados = "Caso numero 1";
+	var evidencia = "Evidencia/Evidencia1.png";
+	var mensaje_sistema = "asdjkalsjdklasjdklasjdklsajdkljaskld";
+	VARIABLES UTILIZADAS EN alertas.html	
+	var nombre_alerta = "Caso numero 1";
+	var mensaje_sistema = "asdjkalsjdklasjdklasjdklsajdkljaskld";
+	-->
+
+<HTML>
+<HEAD>
+<link rel="shortcut icon" href="Formato/images/favicon.ico" type="image/x-icon">
+<TITLE>Log de Resultados</TITLE>
+<SCRIPT>
+
+function w1(str) { logtitle.document.writeln(str) }
+function w2(str) { navframe.document.writeln(str) }
+function writeTitle()
+{
+	logtitle.document.open("text/html", "replace")
+var nombreCaso = "ClonTest_reporteHTML";
+	
+	w1('<HTML>')
+	w1('<HEAD>')
+	w1('<STYLE TYPE="text/css">')
+	w1('p {color: #FFFFFF; font-size: 20pt; font-weight: bold}')
+	w1('select {width: 100%; font-size: 8pt}')
+	w1('</STYLE>')
+	w1('</HEAD>')
+	w1('<BODY BGCOLOR=#003F54>')
+	w1('<TABLE BORDER=0 WIDTH="100%" HEIGHT="100%"><TR><TD ALIGN=CENTER><P>'+nombreCaso+'</TD></TR></TABLE>')
+	w1('</BODY>')
+	w1('</HTML>')
+	logtitle.document.close()
+}
+<!--
+function writeNavFrame()
+{
+	navframe.document.open("text/html", "replace")
+	
+var VP_Exitosos = "VP Link 'Administration Interface'\nVP Link 'Book'\nVP ultima pantalla de flujo";
+var VP_Rechazados = "";
+var VP_Alertas = "";
+var Total_exitosos = "3";
+var Total_rechazados = "0";
+var Total_alertas = "0";
+var porcentaje_exitosos = "100";
+var porcentaje_rechazados = "0";
+var porcentaje_alertas = "0";
+
+	w2('<HTML>')
+	w2('<HEAD>')
+	w2('<STYLE TYPE="text/css">')
+	w2('<!--')
+	w2('	div#return {text-decoration: none; font-size: 10pt; color: black;}')
+	w2('	div#return:hover {text-decoration: underline;}')
+	w2('	select {width: 100%; font-size: 8pt}')
+	w2('//--\>')
+	w2('</STYLE>')
+	w2('<SCRIPT>')
+	w2('<!--')
+	w2('function gotoLogAnchor(hash,text)')
+	w2('{')
+	w2('	if (text != "<Ninguno>") {')
+	w2('		parent.log.location.replace("resumen.html#"+hash)')
+	w2('		window.status=text')
+	w2('	} else {')
+	w2('		window.status=""')
+	w2('	}')
+	w2('}')
+	w2('function clearOtherLists(listbox)')
+	w2('{')
+	w2('	if (document.failures.list != listbox)')
+	w2('		document.failures.list.selectedIndex = -1;')
+	w2('	if (document.warnings.list != listbox)')
+	w2('		document.warnings.list.selectedIndex = -1;')
+	w2('	if (document.vps.list != listbox)')
+	w2('		document.vps.list.selectedIndex = -1;')
+	w2('}')
+	w2('//--\>')
+	w2('</SCRIPT>')
+	w2('</HEAD>')
+	w2('<BODY BGCOLOR=#D1CEC6>')
+	w2('<center><IMG SRC="Formato/images/logo2.png"/></center></BR>')
+	w2('<FORM>')
+	w2('<FONT COLOR=009c63 style="font-size:17px"><B>VP Exitosos</B></FONT><BR>')
+	w2('<TEXTAREA disabled="disabled" style="border:1px solid; border-color:#000; resize: none; width:300px; height:60px">')
+	w2(VP_Exitosos)
+	w2('</TEXTAREA>')
+	w2('</FORM>')
+	w2('</P>')
+	w2('<FORM>')
+	w2('<FONT COLOR=CC2D30 style="font-size:17px"><B>VP Rechazados</B></FONT><BR>')
+	w2('<TEXTAREA disabled="disabled" style="border:1px solid; border-color:#000; resize: none; width:300px; height:60px">')
+	w2(VP_Rechazados)	
+	w2('</TEXTAREA>')
+	w2('</FORM>')
+	w2('</P>')
+	w2('<FORM>')
+	w2('<FONT COLOR=#284177 style="font-size:17px"><B>Alertas</B></FONT><BR>')
+	w2('<TEXTAREA disabled="disabled" style="border:1px solid; border-color:#000; resize: none; width:300px; height:60px">')
+	w2(VP_Alertas)
+	w2('</TEXTAREA>')
+	w2('</FORM>')
+	w2('</P>')
+	w2('</P>')
+	w2('<FORM>')
+	w2('<FONT COLOR=#000 style="font-size:17px"><center><B>Totales</B></center></FONT>')
+	w2('<TABLE style="font-size:13px; background-color:#E6E6DF; border:1px solid; border-color:#000;WIDTH:300PX">')
+	w2('<TH>VP</TH>')
+	w2('<TH style="text-align:center">Cantidad</TH>')
+	w2('<TH style="text-align:center">Progreso Aprox.</TH>')
+	w2('<TH style="text-align:center">%</TH>')	
+	w2('<TR style="text-align:center">')
+	w2('<TD style="width:65px; text-align:left">Exitosos</TD><TD style="width:20px; text-align:center">')
+	w2(Total_exitosos)
+	w2('</TD>')
+	w2('<TD STYLE="WIDTH:120PX">')
+
+w2('<TABLE rules="all" style="border-color:#A9A9A9; border-collapse: separate" border="1" align="center">')
+w2('<TR>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#009c63">&nbsp&nbsp</TD>')
+w2('</TR>')
+w2('</TABLE>')
+	
+	w2('</TD><TD style="text-align:center">'+porcentaje_exitosos+'</TD>')
+	w2('</TR>')
+	w2('<TR>')
+	w2('<TD style="width:70px; text-align:left"">Rechazados</TD><TD style="width:20px; text-align:center">')
+	w2(Total_rechazados)
+	w2('</TD>')
+	w2('<TD STYLE="WIDTH:125PX">')
+
+w2('<TABLE rules="all" style="border-color:#A9A9A9; border-collapse: separate" border="1" align="center">')
+w2('<TR>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('</TR>')
+w2('</TABLE>')
+	
+	w2('</TD><TD style="text-align:center">'+porcentaje_rechazados+'</TD>')
+	w2('</TR>')
+	w2('<TR>')
+	w2('<TD style="width:80px; text-align:left">Alertas</TD><TD style="width:20px; text-align:center">')
+	w2(Total_alertas)
+	w2('</TD>')
+	w2('<TD STYLE="WIDTH:125PX">')
+
+w2('<TABLE rules="all" style="border-color:#A9A9A9; border-collapse: separate" border="1" align="center">')
+w2('<TR>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('<TD style="background-color:#DDDBD1">&nbsp&nbsp</TD>')
+w2('</TR>')
+w2('</TABLE>')
+	
+	w2('</TD><TD style="text-align:center">'+porcentaje_alertas+'</TD>')
+	w2('</TR>')
+	w2('</TABLE>')
+	w2('</FORM>')
+	w2('</P>')
+	w2('</BODY>')
+	w2('</HTML>')
+	navframe.document.close()
+}
+//-->
+</SCRIPT>
+</HEAD>
+<NOFRAMES>
+<H2>Alerta de trama</H2>
+<P>
+Este documento est? dise?ado para ser visualizado con un navegador web con posibilidad de tramas.</P>
+<A HREF="resumen.html">Versi?n sin marcos</A>
+</NOFRAMES>
+<FRAMESET ROWS="70px,*" FRAMEBORDER=0 onLoad="writeTitle(); writeNavFrame();");>
+  <FRAME NAME="logtitle" SRC="about:blank" TITLE="Log Title">
+  <FRAMESET COLS="23.5%,76.5%">
+	<FRAME NAME="navframe" SRC="about:blank" TITLE="Navigation Frame">
+	<FRAME NAME="log" SRC="resumen.html" TITLE="Log Frame">
+  </FRAMESET>
+</FRAMESET>
+</HTML>

@@ -1,0 +1,144 @@
+<!--
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="charset" CONTENT="utf-8">
+<link rel="stylesheet" href="Formato/css/estilo.css"/>
+<link rel="shortcut icon" href="Formato/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Formato/css/jquery.fancybox.css" >
+    <script src="Formato/js/jquery.js"></script>
+    <script src="Formato/js/jquery-migrate-1.1.1.js"></script>
+    <script src="Formato/js/bgstretcher.js"></script>
+    <script src="Formato/js/jquery.elastislide.js"></script>
+    <script src="Formato/js/jquery.fancybox.pack.js"></script>
+    <script>
+	$(document).ready(function() {	
+      $('BODY').bgStretcher({
+		imageWidth: 1024, 
+		imageHeight: 768, 
+		resizeProportionally:true	
+       });
+	$('#carousel').elastislide({imageW :300,margin: 0,minItems: 1});   
+	$('.magnifier').fancybox();   
+		
+
+	$(".view").hover(
+	function(){$(this).find("img").stop().animate({opacity:0.5},"normal")},
+	function(){$(this).find("img").stop().animate({opacity:1},"normal")})
+	})  
+	     	
+    </script>
+<TITLE>Log de Resultados</TITLE>
+<STYLE TYPE="text/css">
+<!--
+  table caption {color: darkblue; font-size: x-large; font-weight: bold}
+  td {align: left; font-weight: bold}
+  td.fail {color: darkred; width: 10% }
+  td.warn {color: darkgoldenrod; width: 10% }
+  td.pass {color: darkgreen; width: 10% }
+  td.unkn {color: darkcyan; width: 10% }
+  td.time {width: 30%; font-weight: normal}
+  td.note {align: left; font-weight: bold}
+  li {font-weight: normal}
+-->
+</STYLE>
+<SCRIPT>
+<!--
+function comparator(logDir,base,exp,act)
+{
+	try{
+		document.ComparatorApplet.startComparatorEx(base,exp,act,logDir);
+	}
+	catch(e){
+		alert("CRFCN0309E: Error al crear la visualización del punto de verificación:\nCRFCN0310E: Para ver los resultados de los puntos de verificación, se debe asociar con el navegador un JRE habilitado (1.3.1_02 o posterior)");
+	}
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+<TABLE WIDTH="100%" id="principal" >
+<TR>
+<TD colspan="3" id="encabezados">Datos de Ejecuci&oacuten</TD>
+</TR>
+<TR><TD COLSPAN=3>
+	
+<SCRIPT>
+	var doc = document.open("text/html","replace");	
+	var nombre_navegador = "Internet Explorer";
+	var hora_inicial_resumen = "12:00";
+	var fecha_inicial_resumen = "30-06-2014";
+	var hora_termino_resumen = "13:00";
+	var fecha_termino_resumen = "30-06-2014";
+
+	doc.write('<table id="tbl1" rules="all" border="2">');
+	doc.write('<tr>');
+	doc.write('<td id="fondo">Navegador</td><td id="info2">'+nombre_navegador+'</td>');
+	doc.write('</tr>');
+	doc.write('<tr>');
+	doc.write('<td id="fondo">Hora Inicio</td><td id="info2">'+hora_inicial_resumen+'</td>');
+	doc.write('</tr>');
+	doc.write('<tr>');
+	doc.write('<td id="fondo">Fecha Inicio</td><td id="info2">'+fecha_inicial_resumen+'</td>');
+	doc.write('</tr>');
+	doc.write('<tr>');
+	doc.write('<td id="fondo">Hora T&eacutermino</td><td id="info2">'+hora_termino_resumen+'</td>');
+	doc.write('</tr>');
+	doc.write('<tr>');
+	doc.write('<td id="fondo">Fecha T&eacutermino</td><td id="info2">'+fecha_termino_resumen+'</td>');
+	doc.write('</tr>');
+	doc.write('</table>');
+
+	doc.close();
+</SCRIPT>
+
+
+</TD></TR>
+<TR>
+<TD id="encabezados" colspan="3">Resumen de Ejecuci&oacuten</TD>
+</TR>
+<TR><TD>
+<table id="tbl2" rules="all" border="2">
+<th id="fondo" style="color:#009c63">VP Exitosos</th>
+<tr>
+<td id="info1" valign="top">Los puntos de verificaci&oacuten se utilizan para comprobar la realizaci&oacuten de  una acci&oacuten o verificar el estado o propiedad de un 
+objeto en espec&iacutefico. Al momento de crear un punto de verificaci&oacuten se debe ingresar la informaci&oacuten base para realizar la comparaci&oacuten con la 
+informaci&oacuten obtenida durante la ejecuci&oacuten. Un punto de verificaci&oacuten exitoso se obtiene cuando se realiza la comparaci&oacuten y ambas informaciones son coincidentes.
+</br></br>
+<div id="detalles">
+<a href="vp_exitosos.html"><img src="Formato/images/detalle.png" width="32px" title="Mas detalles" align="right" /></a></td>
+</div>
+</tr>
+</table> 
+</TD><TD>
+<table id="tbl2" rules="all" border="2">
+<th id="fondo" style="color:#CC2D30">VP Rechazados</th>
+<tr>
+<td id="info1" valign="top">Los puntos de verificaci&oacuten se utilizan para comprobar la realizaci&oacuten de  una acci&oacuten o verificar el estado o propiedad de un 
+objeto en espec&iacutefico. Al momento de crear un punto de verificaci&oacuten se debe ingresar la informaci&oacuten base para realizar la comparaci&oacuten con la 
+informaci&oacuten obtenida durante la ejecuci&oacuten. Un punto de verificaci&oacuten rechazado se obtiene cuando se realiza la comparaci&oacuten y se presentan 
+variaciones entre la informaci&oacuten base y la obtenida en ejecuci&oacuten.
+<div id="detalles">
+<a href="vp_rechazados.html"><img src="Formato/images/detalle.png" width="32px" title="Mas detalles" align="right"/></a></td>
+</div>
+</tr>
+</table> 
+</TD>
+<TD>
+<table id="tbl2" rules="all" border="2">
+<th id="fondo" style="color:#284177">Alertas</th>
+<tr>
+<td id="info1" valign="top">Las alertas corresponden a advertencias del programa, las que pueden indicar fallas de ejecuci&oacuten, excepciones del sistema o pasos 
+  del proceso con alg&uacuten comportamiento no adecuado, lo que podria influir a que una ejecuci&oacuten posterior no se concrete de forma exitosa.
+</br></br></br></br></br></br>
+<div id="detalles">
+ <a href="alertas.html"><img src="Formato/images/detalle.png" width="32px" title="Mas detalles" align="right"/></a>
+</div> 
+</td></tr>
+</table> 
+</TD>
+</TABLE>
+</BODY>
+</HTML>
