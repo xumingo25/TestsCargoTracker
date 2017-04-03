@@ -40,7 +40,8 @@ public class ClonTest_reporteLib {
 				+ "\\Drivers\\chromedriver.exe");
 	driver = new ChromeDriver();
 	  
-	baseUrl = "http://192.168.17.223:8080";
+	//baseUrl = "http://192.168.17.223:8080";
+	baseUrl = "http://192.168.17.188:8080";
 	
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	

@@ -35,7 +35,8 @@ public class ClonTest_reporteHTML {
 		//Instancia declarada para que Desde aqui se considera tiempo de ejecución reflejado en el Reporte Log 
 		logResult.InicioScript(driver);	
 	
-		baseUrl = "http://192.168.17.223:8080";
+		//baseUrl = "http://192.168.17.223:8080";
+		baseUrl = "http://192.168.17.188:8080";
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		int tiempoL = 1000;
